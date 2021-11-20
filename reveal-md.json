@@ -1,8 +1,8 @@
 {
-    "theme": "mattropolis.css",
+    "theme": ".reveal-md/mattropolis.css",
     "highlightTheme": "vs2015",
     "staticDirs": "images",
     "separator": "^---",
     "verticalSeparator": "^--",
-    "preprocessor": "include.js"
+    "preprocessor": ".reveal-md/include.js"
 }

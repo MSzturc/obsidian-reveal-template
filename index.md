@@ -23,8 +23,6 @@ Link: [google](http://www.google.de)
 
 #### Obsidian synthax absolute path
 
-![[images/dog.jpg]]
-
 ![[dog.jpg]]
 
 --

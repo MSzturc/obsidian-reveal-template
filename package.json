@@ -5,10 +5,8 @@
     "main": "index.md",
     "scripts": {
         "clean": "rm -rf public",
-        "copy-assets": "cp -R fonts/ public/_assets/",
         "start": "reveal-md index.md -w",
-        "build": "reveal-md index.md --static public",
-        "generate": "npm all clean build copy-assets"
+        "build": "reveal-md index.md --static public"
     },
     "license": "MIT",
     "dependencies": {
