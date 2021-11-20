@@ -3,5 +3,6 @@
     "highlightTheme": "vs2015",
     "staticDirs": "images",
     "separator": "^---",
-    "verticalSeparator": "^--"
+    "verticalSeparator": "^--",
+    "preprocessor": "include.js"
 }

@@ -10,5 +10,6 @@ Link: [google](http://www.google.de)
 
 ![Dog](images/dog.jpg)
 
+![[images/dog.jpg]]
 
 ---
