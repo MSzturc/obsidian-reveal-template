@@ -48,3 +48,21 @@ Link: [google](http://www.google.de)
 ![[Hallo.welt]]
 
 ![[Grütze]]
+
+--
+
+#### Embed Part of Markdown file
+
+![[Meine Tiere#Hund]]
+
+--
+
+#### Embed Part of Markdown file
+
+![[Meine Tiere#Only a Title]]
+
+--
+
+#### Wrong title
+
+![[Meine Tiere#Wrong Title]]
