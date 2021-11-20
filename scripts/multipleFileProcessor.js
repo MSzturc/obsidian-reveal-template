@@ -1,56 +1,61 @@
 var fs = require('fs');
 const path = require('path');
 
-const regex = /!\[\[(.*(jpg|png|jpeg|gif|bmp|svg))\]\]/gmi;
+const regex = /!\[\[(.*)\]\]/gm;
 
 module.exports = (markdown, options) => {
     return markdown
         .split('\n')
         .map((line, index) => {
             if (regex.test(line))
-                return transformImageString(line, options);
+                return transformLine(line, options);
             return line;
         })
         .join('\n');
 }
 
-const transformImageString = (line, options) => {
+const transformLine = (line, options) => {
     var filePath = line.replace("![[", "").replace("]]", "");
 
-    if (!fileExists(filePath)) {
-        filePath = findFile(filePath, options);
+    const res = getMarkdownFile(filePath);
+
+    if (res === null) {
+        return "";
     }
 
-    return "![](" + filePath + ")";
+    return fs.readFileSync(res);
 }
 
-function findFile(filePath, options) {
+function getMarkdownFile(line) {
+    var file = line;
+    if (!line.toLowerCase().endsWith(".md")) {
+        file = file + ".md";
+    }
+    return findFile(file);
+}
 
-    const baseDir = path.join(__dirname, '../');
-    const staticDirs = typeof options.staticDirs === 'string' ? options.staticDirs.split(',') : options.staticDirs;
+function findFile(filePath) {
 
-    for (let staticDir of staticDirs) {
-        let walkBase = path.join(baseDir, staticDir);
+    const baseDir = findVault(__dirname);
 
-        let allFiles = walkDir(walkBase);
+    let allFiles = walkDir(baseDir);
 
-        for (let file of allFiles) {
-            if (file.endsWith(filePath)) {
-                return file.replace(baseDir, "");
-            }
-
+    for (let file of allFiles) {
+        if (file.endsWith(filePath)) {
+            return file;
         }
     }
-    return filePath;
+    return null;
 }
 
-function fileExists(filepath) {
-    try {
-        fs.accessSync(filepath, fs.constants.F_OK);
-    } catch (e) {
-        return false;
+function findVault(baseDir) {
+    const pathToTest = path.join(baseDir, '.obsidian');
+
+    if (fs.existsSync(pathToTest)) {
+        return baseDir;
+    } else {
+        return findVault(path.join(baseDir, '../'));
     }
-    return true;
 }
 
 function walkDir(dir) {
