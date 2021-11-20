@@ -66,3 +66,23 @@ Link: [google](http://www.google.de)
 #### Wrong title
 
 ![[Meine Tiere#Wrong Title]]
+
+---
+
+#### Image with Size property
+
+![Dog](images/dog.jpg) <!-- .element: style="height: 200px; width:300px" -->
+
+--
+
+#### Image with Size property
+
+![[dog.jpg]] <!-- .element: style="height: 200px; width:300px" -->
+
+--
+
+#### Image with Size property
+
+![[dog.jpg|300x200]]
+
+![[dog.jpg|300]]
