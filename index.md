@@ -75,7 +75,7 @@ Link: [google](http://www.google.de)
 
 --
 
-#### Image with Size property
+#### Image with Size property 
 
 ![[dog.jpg]] <!-- .element: style="height: 200px; width:300px" -->
 
@@ -86,3 +86,9 @@ Link: [google](http://www.google.de)
 ![[dog.jpg|300x200]]
 
 ![[dog.jpg|300]]
+
+--
+
+#### Image with Size property and element comment
+
+![[dog.jpg|300x200]] <!-- .element: class="resize" -->
