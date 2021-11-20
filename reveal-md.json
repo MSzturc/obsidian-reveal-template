@@ -1,0 +1,7 @@
+{
+    "theme": "mattropolis.css",
+    "highlightTheme": "vs2015",
+    "staticDirs": "images",
+    "separator": "^---",
+    "verticalSeparator": "^--"
+}

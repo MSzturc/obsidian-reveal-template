@@ -1,0 +1,17 @@
+{
+    "name": "obsidian-reveal-template",
+    "version": "1.0.0",
+    "description": "reveal-md workflow with obsidian synthax",
+    "main": "index.md",
+    "scripts": {
+        "clean": "rm -rf public",
+        "copy-assets": "cp -R fonts/ public/_assets/",
+        "start": "reveal-md index.md -w",
+        "build": "reveal-md index.md --static public",
+        "generate": "npm all clean build copy-assets"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "reveal-md": "^5.2.0"
+    }
+}
