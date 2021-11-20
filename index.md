@@ -34,3 +34,19 @@ Link: [google](http://www.google.de)
 ![[cat.jpg]]
 
 ---
+
+#### Markdown
+
+--
+
+#### Embed Markdown files with extension
+
+![[Second Slide.md]]
+
+--
+
+#### Embed Markdown files without extension
+
+![[Hallo.welt]]
+
+![[Grütze]]
