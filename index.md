@@ -92,3 +92,19 @@ Link: [google](http://www.google.de)
 #### Image with Size property and element comment
 
 ![[dog.jpg|300x200]] <!-- .element: class="resize" -->
+
+
+---
+
+#### Custom Stylesheet
+
+<style>
+
+	.red{
+		background-color: red;
+	}
+
+</style>
+
+
+## Red backgrounded Text <!-- .element: class="red" -->
