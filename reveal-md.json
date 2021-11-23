@@ -2,7 +2,7 @@
     "theme": ".reveal-md/mattropolis.css",
     "highlightTheme": "vs2015",
     "staticDirs": "images",
-    "separator": "^---",
-    "verticalSeparator": "^--",
+    "separator": "\r?\n---\r?\n",
+    "verticalSeparator": "\r?\n--\r?\n",
     "preprocessor": ".reveal-md/include.js"
 }

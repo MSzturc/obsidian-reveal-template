@@ -130,3 +130,44 @@ Paragraph content
 *in same block*
 
 :::
+
+---
+
+### Block Quotes
+
+> Human beings face ever more complex and urgent problems, and their effectiveness in dealing with these problems is a matter that is critical to the stability and continued progress of society.
+
+---
+
+### Code Blocks
+
+```js
+function fancyAlert(arg) {
+  if(arg) {
+    $.facebox({div:'#foo'})
+  }
+}
+```
+
+---
+
+### Task list
+
+- [x] #tags, [links](#/3), **formatting** supported
+- [x] list syntax required (any unordered or ordered list supported)
+- [x] this is a complete item
+- [ ] this is an incomplete item
+- [ ] tasks can be clicked in Preview to be checked off
+
+
+---
+
+### Tables
+
+
+First Header | Second Header
+------------ | ------------
+Content from cell 1 | Content from cell 2
+Content in the first column | Content in the second column
+
+
