@@ -337,12 +337,13 @@ section.has-light-background h6 {
 
 .reveal sup {
     vertical-align: super;
-    font-size: smaller;
+    font-size: x-small;
+    color: var(--r-link-color);
 }
 
 .reveal sub {
     vertical-align: sub;
-    font-size: smaller;
+    font-size: x-small;
 }
 
 .reveal small {
@@ -425,6 +426,19 @@ section.has-light-background h6 {
     .backgrounds {
         background-color: var(--r-background-color);
     }
+}
+
+.footnotes {
+    font-size: 8px;
+}
+
+.footnotes>ol * {
+    margin: 0px !important;
+}
+
+.footnotes>ol>li::marker {
+    color: var(--r-link-color);
+    content: counter(list-item) ": ";
 }
 
 

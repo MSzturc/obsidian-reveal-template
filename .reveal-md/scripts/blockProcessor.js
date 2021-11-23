@@ -1,5 +1,3 @@
-const regex = /!\[\[(.*(jpg|png|jpeg|gif|bmp|svg)(\|\d*(x\d*)?)?)\]\]/gmi;
-
 module.exports = (markdown, options) => {
     return transformBlock(markdown);
 }

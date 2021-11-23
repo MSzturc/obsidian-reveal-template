@@ -171,3 +171,16 @@ Content from cell 1 | Content from cell 2
 Content in the first column | Content in the second column
 
 
+---
+
+### Footnotes
+
+First Footnote[^1]
+
+Here's a simple footnote,[^2] and here is another[^another].
+
+[^1]: meaningful!
+
+[^2]: second
+
+[^another]: this is meaningful too!
