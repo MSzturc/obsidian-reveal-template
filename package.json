@@ -4,8 +4,8 @@
     "description": "reveal-md workflow with obsidian synthax",
     "main": "index.md",
     "scripts": {
-        "clean": "rm -rf public",
         "start": "reveal-md index.md -w",
+        "prebuild": "rm -rf public",
         "build": "reveal-md index.md --static public"
     },
     "license": "MIT",
