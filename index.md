@@ -27,9 +27,20 @@ Link: [google](http://www.google.de)
 
 --
 
+#### Obsidian synthax with fragment
+
+![[dog.jpg]] <!-- .element: class="fragment" -->
+
+--
+
 #### Obsidian synthax find image
 
 ![[cat.jpg]]
+
+--
+<!-- .slide: data-background="images/cat.jpg" data-background-opacity="0.5" -->
+
+#### Slide with Background image
 
 ---
 
