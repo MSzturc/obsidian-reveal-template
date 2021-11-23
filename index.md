@@ -108,3 +108,25 @@ Link: [google](http://www.google.de)
 
 
 ## Red backgrounded Text <!-- .element: class="red" -->
+
+
+---
+
+<style>
+
+	.block{
+		border: 1px solid red;
+	}
+
+</style>
+
+### Block Sections
+
+::: block
+
+#### Header
+_and_
+Paragraph content
+*in same block*
+
+:::
