@@ -4,6 +4,8 @@ const { findFile, fileExists } = require('./utils/fileUtils.js');
 
 const regex = /!\[\[(.*(jpg|png|jpeg|gif|bmp|svg)(\|\d*(x\d*)?)?)\]\]/gmi;
 
+const markdownImageRegex = /!\[[^\]]*\]\(.*(jpg|png|jpeg|gif|bmp|svg)\)/gmi;
+
 module.exports = (markdown, options) => {
     return markdown
         .split('\n')
@@ -12,7 +14,38 @@ module.exports = (markdown, options) => {
                 return transformImageString(line, options);
             return line;
         })
+        .map((line, index) => {
+            if (markdownImageRegex.test(line))
+                return htmlify(line);
+            return line;
+        })
         .join('\n');
+}
+
+const htmlify = (line) => {
+
+    var comment = null;
+
+    if (line.includes("<!--")) {
+        comment = line.substring(line.indexOf("<!--")).trim();
+        comment = parseComment(comment);
+    }
+
+    var startIdx = line.indexOf('(') + 1;
+    var endIdx = line.indexOf(')', startIdx);
+    var filePath = line.substring(startIdx, endIdx).trim();
+
+    var startAltIdx = line.indexOf('[') + 1;
+    var endAltIdx = line.indexOf(']', startAltIdx);
+    var alt = line.substring(startAltIdx, endAltIdx).trim();
+
+    var result = '<img src="' + filePath + '" alt="' + alt + '"></img>';
+
+    if (comment != null && comment.type === 'element') {
+        result = '<p ' + buildAttributes(comment) + '>' + result + '</p>';
+    }
+
+    return result;
 }
 
 const transformImageString = (line, options) => {
@@ -87,6 +120,16 @@ function commentToString(comment) {
         console.log("ERROR: type not supported: " + comment.type);
     }
 
+    result += buildAttributes(comment);
+
+    result += ' -->';
+    return result;
+
+}
+
+function buildAttributes(comment) {
+    var result = '';
+
     if (comment.style.length > 0) {
         var styles = "";
         for (item of comment.style) {
@@ -105,9 +148,7 @@ function commentToString(comment) {
         result += 'class="' + clazzes.trim() + '" ';
     }
 
-    result += '-->';
-    return result;
-
+    return result.trim();
 }
 
 function parseComment(comment) {
