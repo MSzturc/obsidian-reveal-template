@@ -195,3 +195,10 @@ Here's a simple footnote,[^2] and here is another[^another].
 [^2]: second
 
 [^another]: this is meaningful too!
+
+
+---
+
+# Internal Links
+
+- This [[Problem]] is [[Complexity|complex]]

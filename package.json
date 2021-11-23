@@ -6,7 +6,8 @@
     "scripts": {
         "start": "reveal-md index.md -w",
         "prebuild": "rm -rf public",
-        "build": "reveal-md index.md --static public"
+        "build": "reveal-md index.md --static public",
+        "pdf": "reveal-md index.md --print"
     },
     "license": "MIT",
     "dependencies": {
