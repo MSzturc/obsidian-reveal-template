@@ -168,9 +168,14 @@ section.has-light-background h6 {
  * OTHER
  *********************************************/
 
-.reveal p:not(:has(img)) {
+.reveal p {
     margin: var(--r-block-margin) 0;
     line-height: 1.3;
+}
+
+.reset-paragraph {
+    margin: 0 !important;
+    line-height: inherit !important;
 }
 
 

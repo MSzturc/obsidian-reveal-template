@@ -10,11 +10,13 @@ module.exports = (markdown, options) => {
     return markdown
         .split('\n')
         .map((line, index) => {
+            // Transform ![[myImage.png]] to ![](myImage.png)
             if (regex.test(line))
                 return transformImageString(line, options);
             return line;
         })
         .map((line, index) => {
+            // Transform ![](myImage.png) to html
             if (markdownImageRegex.test(line))
                 return htmlify(line);
             return line;
@@ -40,6 +42,14 @@ const htmlify = (line) => {
     var alt = line.substring(startAltIdx, endAltIdx).trim();
 
     var result = '<img src="' + filePath + '" alt="' + alt + '"></img>';
+
+    if (comment === null) {
+        comment = { 'type': 'element', 'style': [], 'clazz': ['reset-paragraph'] }
+    } else {
+        if (!comment.clazz.includes('reset-paragraph')) {
+            comment.clazz.push('reset-paragraph');
+        }
+    }
 
     if (comment != null && comment.type === 'element') {
         result = '<p ' + buildAttributes(comment) + '>' + result + '</p>';
