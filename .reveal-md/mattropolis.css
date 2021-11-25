@@ -173,9 +173,9 @@ section.has-light-background h6 {
     line-height: 1.3;
 }
 
-.reset-paragraph {
-    margin: 0 !important;
-    line-height: inherit !important;
+p.reset-paragraph {
+    margin: inherit;
+    line-height: inherit;
 }
 
 
